@@ -1,0 +1,285 @@
+[
+    {
+        "name": "Amazer",
+        "banner": "../images/game/banners/amazer.png",
+        "url": "http://upgradeyourskull.com/amazer",
+        "platforms": [
+            {
+                "name": "itchio",
+                "url": "https://upgradeyourskull.itch.io/amazer"
+            }
+        ],
+        "description": "Sounds and music by <a href=\"https://soundcloud.com/mindbrain\" target=\"_blank\">David Young</a>",
+        "comment": "",
+        "sources": [
+            {
+                "name": "bitbucket",
+                "url": "https://bitbucket.org/Floriaen/amazer"
+            }
+        ]
+    },
+    {
+        "name": "Downfall",
+        "banner": "../images/game/banners/downfall.png",
+        "url": "http://download.upgradeyourskull.com/downfall",
+        "description": "Music by Felix",
+        "sources": [
+            {
+                "name": "bitbucket",
+                "url": "https://bitbucket.org/Floriaen/downfall"
+            }
+        ]
+    },
+    {
+        "name": "Digger",
+        "contest": "js13k",
+        "banner": "../images/game/banners/digger.jpg",
+        "url": "http://js13kgames.com/entries/digger",
+        "targetUrl": "blank",
+        "description": "Created during js13k contest",
+        "platforms": [
+            {
+                "name": "js13k",
+                "url": "https://js13kgames.com/entries/digger"
+            }
+        ],
+        "sources": [
+            {
+                "name": "github",
+                "url": "https://github.com/floriaen/Digger"
+            }
+        ]
+    },
+    {
+        "name": "R",
+        "contest": "LD31",
+        "banner": "../images/game/banners/r.jpg",
+        "url": "http://ludumdare.com/compo/ludum-dare-31/?action=preview&uid=4562",
+        "targetUrl": "blank",
+        "description": "Created during ld31 contest"
+    },
+    {
+        "name": "Genesis",
+        "contest": "js13k",
+        "banner": "../images/game/banners/genesis.png",
+        "targetUrl": "blank",
+        "description": "JS13K",
+        "platforms": [
+            {
+                "name": "js13k",
+                "url": "http://js13kgames.com/entries/genesis"
+            }
+        ],
+        "sources": [
+            {
+                "name": "github",
+                "url": "https://github.com/floriaen/Genesis"
+            }
+        ]
+    },
+    {
+        "name": "Red Man",
+        "contest": "One Game A Month",
+        "banner": "../images/game/banners/redman.png",
+        "description": "Music by <a href=\"https://soundcloud.com/grace-in-space\" target=\"_blank\">Grace Zarczynska</a>",
+        "platforms": [
+            {
+                "name": "newgrounds",
+                "url": "http://www.newgrounds.com/portal/view/632899"
+            },
+            {
+                "name": "gamejolt",
+                "url": "http://gamejolt.com/games/platformer/redman/21753"
+            }
+        ]
+    },
+    {
+        "name": "Bloody Party",
+        "contest": "One Game A Month",
+        "banner": "../images/game/banners/bloodyparty.png",
+        "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>",
+        "platforms": [
+            {
+                "name": "gamejolt",
+                "url": "http://gamejolt.com/games/arcade/bloody-party/19344/"
+            }
+        ]
+    },
+    {
+        "name": "Live To Die",
+        "contest": "One Game A Month",
+        "banner": "../images/game/banners/livetodie.png",
+        "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>"
+    },
+    {
+        "name": "Reaching The Hatch",
+        "contest": "One Game A Month",
+        "banner": "../images/game/banners/reachingthehatch.png",
+        "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>",
+        "platforms": [
+            {
+                "name": "newgrounds",
+                "url": "http://www.newgrounds.com/portal/view/627956"
+            },
+            {
+                "name": "gamejolt",
+                "url": "http://gamejolt.com/games/arcade/reaching-the-hatch/18840"
+            }
+        ]
+    },
+    {
+        "name": "Sewer World",
+        "contest": "One Game A Month",
+        "banner": "../images/game/banners/sewerworld.png",
+        "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>",
+        "comments": [
+            {
+                "source": "pcgamer.com",
+                "url": "https://www.pcgamer.com/the-free-webgame-round-up-49/",
+                "comment": "Why on Earth is the soundtrack to this tricky rabbit-based platform game so damned fantastic? It somehow fits the game perfectly too, which is a minimalist, surreal and mechanically adept platformer, and one that's predictably far too hard for the likes of me."
+            }
+        ],
+        "platforms": [
+            {
+                "name": "newgrounds",
+                "url": "http://www.newgrounds.com/portal/view/624623"
+            },
+            {
+                "name": "gamejolt",
+                "url": "http://gamejolt.com/games/platformer/sewer-world/17336"
+            }
+        ]
+    },
+    {
+        "name": "Pests",
+        "contest": "One Game A Month",
+        "banner": "../images/game/banners/pests.png",
+        "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>",
+        "platforms": [
+            {
+                "name": "newgrounds",
+                "url": "http://www.newgrounds.com/portal/view/618872"
+            },
+            {
+                "name": "gamejolt",
+                "url": "http://gamejolt.com/games/arcade/pests/15052"
+            }
+        ],
+        "sources": [
+            {
+                "name": "bitbucket",
+                "url": "https://bitbucket.org/Floriaen/pests"
+            }
+        ]
+    },
+    {
+        "name": "Marsh",
+        "contest": "One Game A Month",
+        "banner": "../images/game/banners/marsh.png",
+        "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>",
+        "platforms": [
+            {
+                "name": "kongregate",
+                "url": "http://www.kongregate.com/games/Floriaen/marsh"
+            },
+            {
+                "name": "newgrounds",
+                "url": "http://www.newgrounds.com/portal/view/614484"
+            },
+            {
+                "name": "gamejolt",
+                "url": "http://gamejolt.com/games/shooter/marsh/13727"
+            }
+        ]
+    },
+    {
+        "name": "Avoid The Gloom",
+        "contest": "One Game A Month",
+        "banner": "../images/game/banners/avoidthegloom.png",
+        "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>",
+        "platforms": [
+            {
+                "name": "kongregate",
+                "url": "http://www.kongregate.com/games/Floriaen/avoid-the-gloom"
+            },
+            {
+                "name": "newgrounds",
+                "url": "http://www.newgrounds.com/portal/view/612168"
+            },
+            {
+                "name": "gamejolt",
+                "url": "http://gamejolt.com/games/arcade/avoid-the-gloom/12917"
+            }
+        ]
+    },
+    {
+        "name": "Colorpath",
+        "contest": "One Game A Month",
+        "banner": "../images/game/banners/colorpath.png",
+        "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>",
+        "platforms": [
+            {
+                "name": "kongregate",
+                "url": "http://www.kongregate.com/games/Floriaen/colorpath"
+            },
+            {
+                "name": "newgrounds",
+                "url": "http://www.newgrounds.com/portal/view/610157"
+            },
+            {
+                "name": "gamejolt",
+                "url": "http://gamejolt.com/games/platformer/colorpath/12065"
+            }
+        ]
+    },
+    {
+        "name": "The Column",
+        "banner": "../images/game/banners/thecolumn.png",
+        "url": "thecolumn",
+        "description": "Music by xpeasmanx",
+        "platforms": [
+            {
+                "name": "kongregate",
+                "url": "http://www.kongregate.com/games/Floriaen/the-column"
+            },
+            {
+                "name": "newgrounds",
+                "url": "http://www.newgrounds.com/portal/view/601954"
+            },
+            {
+                "name": "gamejolt",
+                "url": "http://gamejolt.com/online/games/arcade/the-column/9441"
+            }
+        ]
+    },
+    {
+        "name": "The World",
+        "banner": "../images/game/banners/theworld.png",
+        "description": "Created during ld23 contest, never submitted",
+        "url": "/ld23"
+    },
+    {
+        "name": "The Vampire",
+        "banner": "../images/game/banners/vampire.png",
+        "description": "Prototype, tile based game",
+        "url": "/vampire"
+    },
+    {
+        "name": "Snake",
+        "banner": "../images/game/banners/snake.png",
+        "contest": "",
+        "url": "snake"
+    },
+    {
+        "name": "The Fall",
+        "banner": "../images/game/banners/thefall.jpg",
+        "description": "Created during ld48 contest",
+        "url": "/thefall/ld48/",
+        "platforms": [
+            {
+                "name": "floriaen",
+                "url": "/thefall/ld48/"
+            }
+        ]
+    }
+]

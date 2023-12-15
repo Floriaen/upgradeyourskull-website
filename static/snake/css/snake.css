@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'SilkscreenNormal';
+    src: url('../resources/fonts/slkscr-webfont.eot');
+    src: url('../resources/fonts/slkscr-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../resources/fonts/slkscr-webfont.woff') format('woff'),
+         url('../resources/fonts/slkscr-webfont.ttf') format('truetype'),
+         url('../resources/fonts/slkscr-webfont.svg#SilkscreenNormal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, html { background-color: black; margin:0; padding: 0; overflow:hidden; font-family:"SilkscreenNormal"; font-size:20px }
+
+#cr-stage, canvas {
+	width: 766px;
+	height: 638px;
+}
+
+#cr-stage {
+	position: relative;
+}
+
+.shadow {
+	background-image: url("../resources/innerShadow.png");
+	position: relative;
+	/*top:64px;*/
+	width: 766px;
+	height: 576px;
+	z-index: 1000;
+}
+
+#container {
+	position: relative;
+	margin: 20px auto;
+	width: 766px;
+}
+
+#toolbar {
+	position: relative;
+	height: 32px;
+	width: 100px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+#toolbar .button {
+	cursor: pointer;
+	background-image: url("../resources/toolbar.png");
+	width: 32px;
+	height: 32px;
+	float: left;
+	margin: 0px;
+}
+#toolbar .facebook {
+	background-position: 0px 32px;
+}			
+#toolbar .fullscreen {
+	background-position: 32px 32px;
+	/*margin-right: 4px;*/
+}
+#toolbar .twitter {
+	background-position: 64px 32px;
+}			

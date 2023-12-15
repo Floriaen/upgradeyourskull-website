@@ -1,0 +1,18 @@
+@import '../style/global.scss';
+
+.platforms-list {
+  list-style-type: none;
+  margin: 0.2rem;
+  padding: 0;
+  overflow: hidden;
+}
+
+.platforms-element {
+  float: left;
+  margin: 0.1rem;
+}
+
+.platform-image {
+  border: 1px solid #999999;
+  background-color: #999999;
+}

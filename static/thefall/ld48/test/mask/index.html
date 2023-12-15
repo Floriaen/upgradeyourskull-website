@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>untitled</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Florian">
+	<!-- Date: 2011-10-09 -->
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<script type="text/javascript">
+		window.onload = function() {
+			var cvs = document.getElementById('canvas');
+			var ctx = cvs.getContext('2d');
+			
+			var image = new Image();
+			image.onload = function() {
+			
+				
+				// color, data, x, y, width, height
+				var result = createAlphaMask([0, 0, 0], this, 0, 0, this.width, this.height);
+				ctx.drawImage(result, 0, 0, this.width, this.height);
+				
+				/*
+				var cvs = document.createElement('canvas');
+				cvs.width = this.width;
+				cvs.height = this.height;
+				var ctx2 = cvs.getContext('2d');
+				ctx2.drawImage(this, 0, 0, this.width, this.height);
+				var content = ctx2.getImageData(0, 0, this.width, this.height);
+				var imageData = content.data;			
+				
+				var newImageData = ctx.createImageData(this.width, this.height);
+				for (var i = 0, len = imageData.length; i < len; i = i + 4) {
+					newImageData.data[i] = 0;
+					newImageData.data[i + 1] = 0;
+					newImageData.data[i + 2] = 0;
+					newImageData.data[i + 3] = imageData[i + 3];
+				}	
+				
+				
+				// imageData
+				ctx.putImageData(newImageData, 0, 0);
+				*/
+			};
+			image.src = 'im.png';
+		};
+	
+		/**
+		 * @color fill with color => rgb array like [0, 0, 0] for black
+		 * @data the source: image/canvas object
+		 **/
+		function createAlphaMask(color, data, x, y, width, height) {
+			var output = document.createElement('canvas');
+			output.width = width;
+			output.height = height;
+			var ctx = output.getContext('2d');
+			ctx.drawImage(data, x, y, data.width, data.height, 0, 0, width, height);
+			var c = ctx.getImageData(0, 0, width, height);
+			for (var i = 0, len = c.data.length; i < len; i = i + 4) {
+				c.data[i] = 0;
+				c.data[i + 1] = 0;
+				c.data[i + 2] = 0;
+				// alpha still the same
+			}
+			ctx.putImageData(c, 0, 0); // update 
+			return output;
+		}
+	
+	</script>
+</body>
+</html>

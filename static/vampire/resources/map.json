@@ -1,0 +1,154 @@
+{ "height":20,
+ "layers":[
+        {
+         "data":[16, 12, 16, 16, 16, 16, 10, 0, 0, 0, 4, 16, 16, 16, 16, 16, 12, 12, 12, 16, 14, 0, 4, 12, 12, 10, 0, 0, 0, 0, 0, 4, 16, 16, 16, 10, 0, 0, 0, 8, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 12, 10, 0, 0, 0, 0, 8, 14, 0, 27, 0, 0, 0, 0, 0, 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 16, 15, 15, 13, 0, 0, 0, 3, 11, 11, 9, 0, 0, 0, 0, 0, 0, 18, 0, 8, 16, 16, 12, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 15, 15, 16, 16, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 27, 0, 0, 0, 0, 4, 16, 16, 14, 0, 0, 0, 0, 7, 15, 13, 0, 0, 0, 7, 15, 15, 13, 0, 0, 0, 4, 16, 14, 0, 0, 0, 7, 16, 12, 10, 0, 0, 0, 8, 16, 16, 14, 0, 0, 0, 0, 8, 14, 0, 7, 15, 16, 14, 0, 0, 0, 7, 15, 16, 16, 16, 14, 0, 0, 27, 0, 8, 14, 0, 4, 12, 16, 16, 13, 0, 0, 4, 12, 16, 16, 16, 10, 0, 0, 7, 15, 16, 14, 0, 0, 0, 4, 16, 14, 27, 0, 0, 0, 4, 16, 10, 0, 0, 0, 4, 16, 16, 14, 0, 0, 0, 0, 4, 16, 13, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 4, 16, 16, 13, 0, 0, 0, 0, 4, 16, 15, 13, 0, 0, 6, 0, 0, 0, 0, 0, 0, 8, 16, 16, 15, 13, 0, 0, 0, 4, 12, 10, 0, 0, 2, 0, 0, 0, 0, 18, 0, 8, 16, 12, 12, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 11, 15, 15, 15, 16, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 16, 16, 14, 0, 18, 0, 0, 7, 15, 15, 15, 13, 0, 0, 0, 0, 27, 0, 0, 8, 16, 16, 15, 15, 15, 15, 15, 16, 16, 16, 16, 16, 13, 0, 0, 0, 7, 15, 15, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 14, 0, 0, 0, 8, 16, 16, 16, 16, 16],
+         "height":20,
+         "name":"Tile Layer 1",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":20,
+         "x":0,
+         "y":0
+        }],
+ "orientation":"orthogonal",
+ "properties":
+    {
+
+    },
+ "tileheight":48,
+ "tilesets":[
+        {
+         "firstgid":1,
+         "image":"work\/pickleTiles_resize.png",
+         "imageheight":48,
+         "imagewidth":768,
+         "margin":0,
+         "name":"Decorum",
+         "properties":
+            {
+             "components":"Block"
+            },
+         "spacing":0,
+         "tileheight":48,
+         "tileproperties":
+            {
+             "0":
+                {
+                 "components":"Ground, Block"
+                },
+             "1":
+                {
+                 "components":"Block"
+                },
+             "10":
+                {
+                 "components":"Ground, Block"
+                },
+             "11":
+                {
+                 "components":"Block"
+                },
+             "12":
+                {
+                 "components":"Ground, Block"
+                },
+             "13":
+                {
+                 "components":"Block"
+                },
+             "14":
+                {
+                 "components":"Ground, Block"
+                },
+             "15":
+                {
+                 "component":"Block"
+                },
+             "2":
+                {
+                 "components":"Ground, Block"
+                },
+             "3":
+                {
+                 "components":"Block"
+                },
+             "4":
+                {
+                 "components":"Ground, Block"
+                },
+             "5":
+                {
+                 "components":"Block"
+                },
+             "6":
+                {
+                 "components":"Ground, Block"
+                },
+             "7":
+                {
+                 "components":"Block"
+                },
+             "8":
+                {
+                 "components":"Ground, Block"
+                },
+             "9":
+                {
+                 "components":"Block"
+                }
+            },
+         "tilewidth":48
+        }, 
+        {
+         "firstgid":17,
+         "image":"resources\/sprite\/common.png",
+         "imageheight":48,
+         "imagewidth":480,
+         "margin":0,
+         "name":"Common",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tileheight":48,
+         "tileproperties":
+            {
+             "0":
+                {
+                 "components":"BloodPotion"
+                },
+             "1":
+                {
+                 "components":"Grave"
+                }
+            },
+         "tilewidth":48
+        }, 
+        {
+         "firstgid":27,
+         "image":"resources\/sprite\/mini_heart.png",
+         "imageheight":48,
+         "imagewidth":144,
+         "margin":0,
+         "name":"Heart",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tileheight":48,
+         "tileproperties":
+            {
+             "0":
+                {
+                 "components":"MiniHeart"
+                }
+            },
+         "tilewidth":48
+        }],
+ "tilewidth":48,
+ "version":1,
+ "width":20
+}

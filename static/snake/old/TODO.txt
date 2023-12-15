@@ -1,0 +1,48 @@
++ BUG:
+	- [OK] black carrot does not explode 
+	- [OK] no tail at the beginning (no point defined)
+	- [OK] tail is not properly defined when starting (I think it solved)
+	- [OK] remove grass on the ground
+	- [OK] no worm inner collision (new introduced bug!)
+	- [OK] carrots spawn in old place (where carrot was)
+	- [OK] snake head does not kill the worm
+	- [OK] items must be over blood
+	- [OK] carrots are difficult to catch (the worm now evolved in a defined grid)
+	
+	- zIndex the tail's parts	
+	- Add the end panel with sharing option (Twitter / Facebook)
+	- Add the score board:
+		+ 
+	
+	
+	
+	- Add 	
+	- make a visual invincible mode (with canvas mask?)
+	- alpha invisible has glif
+	// - portals must eject the worm	
+	- blood over rocks
+	- define all items enchantment
+		-> snake is stopped
+		-> snake is enraged
+		-> snake speed down
+		-> snake speed up
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		Choux
+		Candy Bear
+		Oeuf au plat
+		Arête de poisson
+		Orange sanguine tranche
+	
+	

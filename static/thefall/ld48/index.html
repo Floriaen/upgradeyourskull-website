@@ -1,0 +1,148 @@
+<html>
+   <head>
+      	<title>The Fall - How far can you fall?</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="How far can you fall?" />
+		<link rel="stylesheet" type="text/css" href="css/thefall.css" />		
+   	</head>
+
+   	<body>	
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) {return;}
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+	
+		<div id="content">
+			
+			<div id="purchase" class="shadow roundCorners">
+				<span id="buy">Buy pack of themes for $1</span>
+				<a id="why" href="whyshouldibuy.html">Why?</a>
+			</div>
+
+			<div id="start" class="shadow roundCorners">
+				START
+			</div>
+			
+			<div id="sharingBox">
+				<div id="facebook">
+					<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+				</div>
+				
+				<div id="twitter">
+					<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="floriaen">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				</div>
+				
+				<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+				<div id="gplus">
+					<div class="g-plusone" data-size="medium"></div>
+				</div>
+				
+				<div id="pCount">
+					<a id="why" href="whyshouldibuy.html">$7/$99</A>
+				</div>
+				
+				<div id="paypal">
+					<form id="paypalForm" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="hosted_button_id" value="457V7BMAXS6U4">
+						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+						<img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+					</form>
+					
+				</div>
+
+			</div>
+			
+			<div id="game">
+				<div id="gameScreen">
+					<div id="instructions" class="roundCorners shadow">
+						<h4>How far can you fall?</h4>
+						<p>
+							Use arrows to move
+							<br />Space for jump
+							<br />Holding x if you get stuck
+						</p>
+					</div>
+					<div id="average" class="roundCorners shadow">000 meters</div>
+					<div id="howtoplay" href="">How to play?</div>
+				</div>
+			</div>
+			
+			
+		</div>
+		<div id="footer">&copy; floriaen</div>
+   	</body>	
+
+	<script type="text/javascript" src="scripts/ext/head.js"></script>
+	<script type="text/javascript">
+		head.js(
+			"scripts/ext/prototype.js",
+			function() {
+				Event.observe(window, 'load', function() {
+					
+					// 
+					new Ajax.Request('/thefall/score.php', {
+				    	method: 'get',
+						parameters: 'pattern=getAverage',
+				    	onSuccess: function(transport) {
+				        	var result = transport.responseText;
+							if (result) {
+								var data = result.evalJSON();
+								if (data) {
+									var average = (0.5 + parseInt(data.average, 10)) << 0;
+									$('average').update('Average: <br />' + average + ' meters');
+								}
+							}
+				    	}
+					});
+					
+					Event.observe($('gameScreen'), 'click', function() {
+						$('instructions').setStyle({
+							'display': 'none'
+						});
+					});
+					
+					Event.observe($('purchase'), 'click', function() {
+						$('paypalForm').submit();
+						//window.location.href = 'index.html';
+					});
+					
+					Event.observe($('start'), 'click', function() {
+						window.location.href = 'game.html';
+						//window.location.href = 'index.html';
+					});
+					
+					Event.observe($('howtoplay'), 'click', function(e) {
+						$('instructions').setStyle({
+							'opacity': 0.8,
+							'display': 'block'
+						});
+						Event.stop(e)
+					});
+					Event.observe($('instructions'), 'click', function(e) {
+						$('instructions').setStyle({
+							'display': 'none'
+						});
+						Event.stop(e)
+					});
+				});
+			}
+		);
+	</script>
+	
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-20878930-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</html>

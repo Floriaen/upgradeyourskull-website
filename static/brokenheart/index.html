@@ -1,0 +1,56 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Broken Heart js1k</title>
+	<style type="text/css">
+		#container {
+			position: relative;
+			margin: 0 auto;
+			width: 400px;;
+			color: white;
+			font-family: Helvetica;
+			font-size: 14px;
+			text-align: center;
+		}
+		a {
+			color: white;
+		}
+		a:visited: {
+			color: white;
+		}
+		a:hover {
+			color: pink;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<h1>Find the color of love</h1>
+		<p>
+			This is part of the <a href="http://js1k.com/2012-love/">2012 js1k competition Love</a>
+			The colors of the broken heart are changing on both parts until they match.
+		</p>
+		<canvas id="c"></canvas>
+		<p>&copy; floriaen - 2012</p>
+	</div>
+	
+	<script type="text/javascript">
+		var b = document.body;
+		var c = document.getElementsByTagName('canvas')[0];
+		var a = c.getContext('2d');
+		document.body.clientWidth; // fix bug in webkit: http://qfox.nl/weblog/218
+	</script>
+	<script type="text/javascript" src="js1k-compressed-code.js"></script>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-20878930-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</body>
+</html>

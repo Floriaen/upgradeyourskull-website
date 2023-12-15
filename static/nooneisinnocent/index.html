@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta description="No one is innocent"></meta>
+	<title>No one is innocent, of course</title>
+	<style type="text/css">
+		body {
+			font-family: Verdana, Helvetica sans-serif;
+		}
+		
+		#container {
+			position:relative;
+			width:600px;
+		}
+		.box {
+			float:left;
+			width:120px;
+			height:140px;
+			padding:10px;
+			
+			background-color: pink;	
+			border-radius: 8px;	
+			margin:10px;
+		}
+		
+		.info {
+			font-size: 10px;
+			text-align: center;
+			width:120px;
+			height: 20px;
+			
+			overflow: hidden;
+		}
+		
+		.sharing {
+			float:left;
+			width:40px;
+			padding-top: 2px;
+		}	
+		
+		.title {
+			float:left;
+			width:80px;
+			padding-top: 2px;
+			text-decoration: underline;
+		}
+		
+		.icon {
+			position: relative;
+			float: left;
+		}
+		
+		.show {
+			visibility: visible;
+		}
+		.hide {
+			visibility: hidden			
+		}
+	</style>
+</head>
+<body>
+		
+
+	<div id="container">
+		
+	</div>
+	<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+	<script type="text/javascript">		
+		var data = [
+			{src:'im/noladies.jpg', title: 'No ladies', tag: 'noladies'},
+			{src:'im/nohandicap.jpg', title: 'No handicap', tag: 'nohandicap'},
+			{src:'im/nodoublerainbow.jpg', title: 'No Double Rainbow OMG', tag: 'nodoublerainbow'},
+			{src:'im/nogolfer.jpg', title: 'No golfer', tag: 'nogolfer'},
+			{src:'im/nomonkey.jpg', title: 'No monkey', tag: 'nomonkey'},
+			{src:'im/nopeacenolove.jpg', title: 'No Peace, no Love', tag: 'nopeacenolove'},
+			{src:'im/notrafficlight.jpg', title: 'No traffic light', tag: 'notrafficlight'},
+			{src:'im/nodanger.jpg', title: 'No danger', tag: 'nodanger'}
+		];
+	
+		window.onload = function() {
+			var content = document.createElement('div');
+			for (var idx in data) {
+				(function() {
+					var object = data[idx];
+					var image = new Image();
+					image.width = 120;
+					image.height = 120;
+					image.onload = function() {
+						var box = newBox(object).append(image);
+						content.appendChild(box);
+					};
+					image.src = object.src;
+				})();
+				
+			}
+			// set all to document
+			document.getElementById('container').appendChild(content);
+		};
+		
+		function newBox(object) {
+			var box = document.createElement('div');
+			box.className = 'box';
+			
+			var info = document.createElement('div');
+			//info.className = 'info hide';
+			info.className = 'info show';
+			
+			var title = document.createElement('div');
+			title.className = 'title';
+			
+			var ml = 14;
+			var titleText = object.title;
+			if (titleText.length > ml) {
+				titleText = titleText.substr(0, (ml - 3))+'...';
+			}
+			title.title = object.title;
+			title.innerHTML = titleText;
+			info.appendChild(title);
+			
+			var sharing = document.createElement('div');
+			sharing.className = 'sharing';
+			info.appendChild(sharing);
+			
+			
+			var message = object.title + ' ' + 'http://floriaen.fr/nooneisinnocent/' + object.src + ' #' + object.tag
+			tweetButton(sharing, message);
+			
+			// TWITTER => '#object.tag';
+			box.append = function(child) {
+				box.appendChild(child);
+				box.appendChild(info);
+				return box;
+			};
+			return box;
+		}
+		
+		function tweetButton(container, message) {
+			var maxLength = 140;
+			if (message.length > maxLength) {
+				message = message.substr(0, (maxLength - 3))+'...';
+			}
+			var twtLink = 'http://twitter.com/home?status='+encodeURIComponent(message);
+			container.innerHTML = '<a href="'+twtLink+'" target="_blank"'+'><img src="resources/tweet.png"  border="0" alt="Tweet This!" /'+'><'+'/a>';
+		}
+		
+		
+		function ajax(url, oncomplete) { 
+		    var xhr; 
+		    try {  xhr = new ActiveXObject('Msxml2.XMLHTTP');   }
+		    catch (e) 
+		    {
+		        try {   xhr = new ActiveXObject('Microsoft.XMLHTTP');    }
+		        catch (e2) 
+		        {
+		          try {  xhr = new XMLHttpRequest();     }
+		          catch (e3) {  xhr = false;   }
+		        }
+		     }
+
+		    xhr.onreadystatechange  = function()
+		    { 
+		         if(xhr.readyState  == 4)
+		         {
+		              if(xhr.status  == 200) {
+		              	oncomplete(xhr.responseText)
+						}
+		              
+		         }
+		    }; 
+
+		   xhr.open( 'GET', url,  true); 
+		   xhr.send(null); 
+		}
+		
+	</script>
+	
+	
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-20878930-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</body>
+</html>

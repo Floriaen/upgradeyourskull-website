@@ -1,0 +1,12 @@
+SOUNDS: Bfxr
+IMAGES: Pickle
+RESIZE: Aseprite
+
+
+
+JSCOLOUR: 		http://aaronrussell.github.com/jcolour/
+PATHFINDING: 	https://github.com/qiao/PathFinding.js
+UNDERSCORE:		http://documentcloud.github.com/underscore/
+
+
+

@@ -1,0 +1,116 @@
+<html>
+	<head>
+		<title>The Column</title>
+		<meta name="description" content="The Column, an hardcore game by Floriaen">
+		<link rel="stylesheet" href="/css/reset.css" type="text/css">
+		<style type="text/css">
+			#highscores tr.first {
+				color: red;
+			}
+			#highscores td.number {
+				font-weight: bold
+			}
+			#highscores td {
+				padding: 4px 16px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div class="content">
+				<div class="content-box">				
+					<h1>The Column</h1>
+					<p>
+						An hardcore game by Floriaen
+						<br />with an original music by <a href="http://peasman.co.uk" target="_blank">xpeasmanx</a>
+					</p>
+				</div>
+				<div class="content-box">
+					<img src="resources/thecolumn.png" alt="The Column">
+				</div>
+				
+				<div class="content-box">
+					<div>
+						<ul class="list">
+							<li><a href="http://www.kongregate.com/games/Floriaen/the-column/" target="_blank">/&gt; Play the game on Kongregate</a></li>
+							<li><a href="http://www.newgrounds.com/portal/view/601954" target="_blank">/&gt; Play the game on Newsgrounds</a></li>
+							<li><a href="http://gamejolt.com/online/games/arcade/the-column/9441" target="_blank">/&gt; Play the game on Gamejolt</a></li>
+						</ul>
+					</div>
+				</div>
+
+				
+				<div class="content-box">
+					<a name="highscores"></a>
+					<h2>High scores</h2>
+					<table id="highscores"></table>
+				</div>
+				
+				<div class="content-box">
+					<h2>Extra goodies</h2>
+					<p>by <a href="http://www.art-of-kiko.fr">ArtOfKiko</a></p>
+					<img src="resources/goodies/icon.jpg" width="256" title="The Column by ArtOfKiko">
+					<div>
+						<ul class="list">
+							<li><a href="resources/goodies/wallpaper.jpg" title="The Column wallpaper - ArtOfKiko">Wallpaper (2560 x 1440)</a></li>
+							<li><a href="resources/goodies/thecolumn.jpg" title="The Column - ArtOfKiko">The Column (831 x 1200)</a></li>
+							<li><a href="resources/goodies/thecolumnHD.jpg" title="The Column HD - ArtOfKiko">The Column HD (1978 x 2856)</a></li>
+						</ul>
+					</div>
+				</div>
+				
+				<div id="footer" class="content-box">
+					<p>2012 floriaen</p>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/prototype.js"></script>
+		<script type="text/javascript" src="js/jColour.js"></script>
+		<script type="text/javascript">
+			Event.observe(window, 'load', function() {
+				new Ajax.Request('/thecolumn/score.php', {
+			    	method: 'get',
+					parameters: 'pattern=getHighScore&limit=20',
+			    	onSuccess: function(transport) {
+			    		/*
+							gain: "154.5"
+							height: "5669"
+							name: "Anonymous"
+			    		*/
+			        	var result = transport.responseText;
+						if (result) {
+							var data = result.evalJSON();
+							if (data) {
+								var line = null;
+								var xclass = "first";
+								var c = new jColour('red');
+								var tbody = new Element('tbody');
+								var val = 1 + data.length / 100
+								for (var i = 0; i < data.length; i++) {
+									c.darkenPercent(val * i);
+									//tbody.insert('<tr class="'+ xclass +'"><td class="number">' + (i + 1) + '.</td><td>' + data[i].name + '</td><td>$' + data[i].gain + '</td></tr>');
+									tbody.insert('<tr style="color: '+ c.hex() +'"><td class="number">' + (i + 1) + '.</td><td>' + data[i].name + '</td><td>$' + data[i].gain + '</td></tr>');
+									xclass = "";
+								}
+								$('highscores').insert(tbody); //update('Average: <br />' + average + ' meters');
+							}
+						}
+			    	}
+				});
+			});
+		</script>
+		
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-20878930-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+	</body>
+</html>

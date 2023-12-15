@@ -1,0 +1,34 @@
++ Score board => OK
++ customize score bar + visual add when we gain or lost life time
++ Skins and selection of skin (special url with multi parameters)
++ Twitter / Facebook / G+ sharing => OK
++ Bug fix 
+	- some block does not curse when head touch them
++ Action on stuck (bomb) => OK - add some tiles
+
++ First map must be set like a beginner tutorial (Zach suggestion)
+
+
+- blue bomb
+
+
+SAMEDI SOIR
++ optimization (night alpha replaced by colors) => OK
++ destruction sprite improvement => OK
++ take consumable even if we are in cursed mode => OK
++ cursed mode revert graphics to black => OK
++ bug fix with cursed mode => OK
+
+
+DIMANCHE
+
++ force sprite improvement (space action) ...
++ stop the background darkening before it comes black
+
++ remove all consumable in levitation (bug)
++ random map improvement
+
++ map and sprite (3)
+
++ theme web page (selector)
+

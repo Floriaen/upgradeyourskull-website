@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<title>The Fall - Choose your theme</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="How far can you fall?" />
+		<link rel="stylesheet" type="text/css" href="css/thefall.css" />
+   </head>
+   <body>
+	<div id="fb-root"></div>
+		<div id="content">
+			<div id="sharingBox"></div>
+			<div id="game">							
+				<div id="themeChooser" class="layer">
+					<h2>Choose your theme</h2>
+					<div id="ao2yckw" class="themeBox roundCorners">
+						<div class="thumbnail">
+							<img width="32" src="resources/game/theme/thumb/thefall.png"/>
+						</div>
+						<div class="description">The fall</div>
+					</div>
+					
+					<div id="axjwtbg" class="themeBox roundCorners">
+						<div class="thumbnail">
+							<img width="32" src="resources/game/theme/thumb/adventure.png"/>
+						</div>
+						<div class="description">Adventure <span class="author">by Judark</span></div>
+					</div>
+					<div id="cx5ntda" class="themeBox roundCorners">
+						<div class="thumbnail">
+							<img width="32" src="resources/game/theme/thumb/halloween.png"/>
+						</div>
+						<div class="description">Halloween</div>
+					</div>
+					<div id="zm46cf0" class="themeBox roundCorners">
+						<div class="thumbnail">
+							<img width="32" src="resources/game/theme/thumb/kawai.png"/>
+						</div>
+						<div class="description">Kawaï <span class="author">by Judark</span></div>
+					</div>
+					<div id="dyzebc0" class="themeBox roundCorners">
+						<div class="thumbnail">
+							<img width="32" src="resources/game/theme/thumb/tetris.png"/>
+						</div>
+						<div class="description">Tetris</div>
+					</div>
+					<div id="nhsfcb5" class="themeBox roundCorners">
+						<div class="thumbnail">
+							<img width="32" src="resources/game/theme/thumb/wasntmywar.png"/>
+						</div>
+						<div class="description">Wasn't my war <span class="author">by Judark</span></div>
+					</div>
+					<div id="xmas" class="themeBox roundCorners">
+						<div class="thumbnail">
+							<img width="32" src="resources/game/theme/thumb/xmas.png"/>
+						</div>
+						<div class="description">Xmas</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">&copy; floriaen</div>
+   	</body>
+
+	<script type="text/javascript" src="scripts/ext/head.js"></script>
+	<script type="text/javascript">
+		head.js(
+			"scripts/ext/prototype.js",
+			function() {
+				Event.observe(window, 'load', function() {
+					$$('.themeBox').each(function(box) {
+						var id = box.id;
+						Event.observe(box, 'click', function() {
+							console.log(this);
+							window.location.href = 'game.html?theme=' + id;
+						});
+					});
+					
+				});
+			}
+		);
+	</script>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-20878930-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+   
+</html>
