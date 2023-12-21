@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
+
 import {
   container,
   nav,
@@ -8,12 +9,13 @@ import {
   navLinkText,
   siteTitle,
   navLinkActive,
-  box
+  //box,
+  alert
 } from './layout.module.scss'
 import { StaticImage } from 'gatsby-plugin-image'
 import Platforms from './platforms';
 
-const Layout = ({ pageTitle, children }) => {
+const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -31,10 +33,11 @@ const Layout = ({ pageTitle, children }) => {
           <StaticImage src="../images/game/platform/floriaen.png" alt='Upgrade Your Skull'></StaticImage>
           {data.site.siteMetadata.title}
         </header>
+        <div className={alert}>IN CONSTRUCTION</div>
       </div>
       <div className='{box}'>
         <main>
-
+          
           <Platforms />
           
           <div className='{box}'>

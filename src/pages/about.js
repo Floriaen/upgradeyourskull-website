@@ -13,5 +13,4 @@ const About = () => {
 };
 
 export const Head = () => <title>About Me</title>
-
 export default About;

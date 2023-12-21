@@ -31,3 +31,13 @@ Deploy using the script
 ```shell
 ./deploy.sh
 ```
+
+Fix permission on server with website directories
+
+```shell
+[error] 3497#3497: *3554 "/var/www/upgradeyourskull/xx" is forbidden (13: Permission denied)
+```
+
+```shell
+find . -type d -exec chmod 755 {} +
+```

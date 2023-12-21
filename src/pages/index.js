@@ -41,6 +41,7 @@ const IndexPage = ({ data }) => {
   return (
     <main>
       <Layout pageTitle="Games" key={IndexPage}>
+        <h2>Quotes</h2>
         <p>
           "Wortest game in the World. No, in All Galaxy.
           Now tell me cheat, this game impossible complete without death."
@@ -48,6 +49,8 @@ const IndexPage = ({ data }) => {
         <p>
           "If you can't jump, what's the point?"
         </p>
+        
+        <h2>List</h2>
         {data.allGamesJson.edges.map(({node}) => {
           return (
             <Game data={node} key={node.id} />
@@ -58,8 +61,5 @@ const IndexPage = ({ data }) => {
   )
 }
 
-// You'll learn about this in the next task, just copy it for now
 export const Head = () => <Seo title="Games" />
-
-// Step 3: Export your component
 export default IndexPage;

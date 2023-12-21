@@ -2,7 +2,7 @@
     {
         "name": "Amazer",
         "banner": "../images/game/banners/amazer.png",
-        "url": "http://upgradeyourskull.com/amazer",
+        "url": "https://upgradeyourskull.itch.io/amazer",
         "platforms": [
             {
                 "name": "itchio",
@@ -21,7 +21,6 @@
     {
         "name": "Downfall",
         "banner": "../images/game/banners/downfall.png",
-        "url": "http://download.upgradeyourskull.com/downfall",
         "description": "Music by Felix",
         "sources": [
             {
@@ -34,7 +33,7 @@
         "name": "Digger",
         "contest": "js13k",
         "banner": "../images/game/banners/digger.jpg",
-        "url": "http://js13kgames.com/entries/digger",
+        "url": "https://js13kgames.com/games/digger/index.html",
         "targetUrl": "blank",
         "description": "Created during js13k contest",
         "platforms": [
@@ -54,7 +53,7 @@
         "name": "R",
         "contest": "LD31",
         "banner": "../images/game/banners/r.jpg",
-        "url": "http://ludumdare.com/compo/ludum-dare-31/?action=preview&uid=4562",
+        "oldUrl": "http://ludumdare.com/compo/ludum-dare-31/?action=preview&uid=4562",
         "targetUrl": "blank",
         "description": "Created during ld31 contest"
     },
@@ -62,6 +61,7 @@
         "name": "Genesis",
         "contest": "js13k",
         "banner": "../images/game/banners/genesis.png",
+        "url": "https://js13kgames.com/games/genesis/index.html",
         "targetUrl": "blank",
         "description": "JS13K",
         "platforms": [
@@ -81,6 +81,7 @@
         "name": "Red Man",
         "contest": "One Game A Month",
         "banner": "../images/game/banners/redman.png",
+        "url": "https://legacy.upgradeyourskull.com/redman",
         "description": "Music by <a href=\"https://soundcloud.com/grace-in-space\" target=\"_blank\">Grace Zarczynska</a>",
         "platforms": [
             {
@@ -115,6 +116,7 @@
         "name": "Reaching The Hatch",
         "contest": "One Game A Month",
         "banner": "../images/game/banners/reachingthehatch.png",
+        "url": "https://legacy.upgradeyourskull.com/reachingthehatch",
         "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>",
         "platforms": [
             {
@@ -131,6 +133,7 @@
         "name": "Sewer World",
         "contest": "One Game A Month",
         "banner": "../images/game/banners/sewerworld.png",
+        "url": "https://legacy.upgradeyourskull.com/sewerworld",
         "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>",
         "comments": [
             {
@@ -154,6 +157,7 @@
         "name": "Pests",
         "contest": "One Game A Month",
         "banner": "../images/game/banners/pests.png",
+        "url": "https://legacy.upgradeyourskull.com/pests",
         "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>",
         "platforms": [
             {
@@ -176,6 +180,7 @@
         "name": "Marsh",
         "contest": "One Game A Month",
         "banner": "../images/game/banners/marsh.png",
+        "url": "https://legacy.upgradeyourskull.com/marsh",
         "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>",
         "platforms": [
             {
@@ -197,6 +202,7 @@
         "contest": "One Game A Month",
         "banner": "../images/game/banners/avoidthegloom.png",
         "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>",
+        "url" : "https://legacy.upgradeyourskull.com/avoidthegloom",
         "platforms": [
             {
                 "name": "kongregate",
@@ -216,6 +222,7 @@
         "name": "Colorpath",
         "contest": "One Game A Month",
         "banner": "../images/game/banners/colorpath.png",
+        "url": "https://legacy.upgradeyourskull.com/colorpath",
         "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>",
         "platforms": [
             {
@@ -235,7 +242,7 @@
     {
         "name": "The Column",
         "banner": "../images/game/banners/thecolumn.png",
-        "url": "thecolumn",
+        "url": "https://legacy.upgradeyourskull.com/thecolumn",
         "description": "Music by xpeasmanx",
         "platforms": [
             {
