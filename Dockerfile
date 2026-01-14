@@ -1,15 +1,18 @@
-FROM node:18-alpine
+FROM node:18-alpine AS builder
 
 WORKDIR /app
 
-# Install dependencies first (better caching)
 COPY package*.json ./
 RUN npm ci
 
-# Copy source and build
 COPY . .
 RUN npm run build
 
-EXPOSE 9000
+# Production: serve static files with nginx
+FROM nginx:alpine
 
-CMD ["npx", "gatsby", "serve", "-H", "0.0.0.0", "-p", "9000"]
+COPY --from=builder /app/public /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
