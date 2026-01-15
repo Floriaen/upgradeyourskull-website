@@ -1,5 +1,0 @@
-[phases.build]
-cmds = ["npm ci", "npx gatsby build"]
-
-[start]
-cmd = "npx gatsby serve -H 0.0.0.0"
