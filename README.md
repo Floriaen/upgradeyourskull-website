@@ -2,42 +2,40 @@
   Upgrade Your Skull website
 </h1>
 
-## 🚀 Quick start
+## Quick start
 
 1.  **Install dependencies.**
 
-    Use  npm to install all the dependencies
-
     ```shell
-    npm update
+    npm install
     ```
 
 2.  **Start developing.**
 
-    Navigate into your new site’s directory and start it up.
-
     ```shell
-    gatsby develop
+    npm run develop
     ```
 
 3.  **Open the code and start customizing!**
 
-    Your site is now running at http://localhost:8000!
+    Your site is now running at http://localhost:8000
 
-## 🚀 Deployment
+## Production build
 
-Deploy using the script
-
-```shell
-./deploy.sh
-```
-
-Fix permission on server with website directories
+Build the site locally:
 
 ```shell
-[error] 3497#3497: *3554 "/var/www/upgradeyourskull/xx" is forbidden (13: Permission denied)
+npm run build
 ```
 
+Preview the production build:
+
 ```shell
-find . -type d -exec chmod 755 {} +
+npm run serve
 ```
+
+## Deployment
+
+The site is deployed using Docker via Coolify. Push to the `main` branch to trigger an automatic deployment.
+
+The `Dockerfile` builds the Gatsby site and serves static files with nginx.
