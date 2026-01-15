@@ -98,7 +98,7 @@
         "name": "Bloody Party",
         "contest": "One Game A Month",
         "banner": "../images/game/banners/bloodyparty.png",
-        "url": "https://legacy.upgradeyourskull.com/bloodyparty",
+        "url": "https://legacy.upgradeyourskull.com/bloodyparty.html",
         "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>",
         "platforms": [
             {
@@ -111,13 +111,14 @@
         "name": "Live To Die",
         "contest": "One Game A Month",
         "banner": "../images/game/banners/livetodie.png",
+        "url": "https://legacy.upgradeyourskull.com/livetodie.html",
         "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>"
     },
     {
         "name": "Reaching The Hatch",
         "contest": "One Game A Month",
         "banner": "../images/game/banners/reachingthehatch.png",
-        "url": "https://legacy.upgradeyourskull.com/reachingthehatch",
+        "url": "https://legacy.upgradeyourskull.com/reachingthehatch.html",
         "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>",
         "platforms": [
             {
@@ -134,7 +135,7 @@
         "name": "Sewer World",
         "contest": "One Game A Month",
         "banner": "../images/game/banners/sewerworld.png",
-        "url": "https://legacy.upgradeyourskull.com/sewerworld",
+        "url": "https://legacy.upgradeyourskull.com/sewerworld.html",
         "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>",
         "comments": [
             {
@@ -158,7 +159,7 @@
         "name": "Pests",
         "contest": "One Game A Month",
         "banner": "../images/game/banners/pests.png",
-        "url": "https://legacy.upgradeyourskull.com/pests",
+        "url": "https://legacy.upgradeyourskull.com/pests.html",
         "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>",
         "platforms": [
             {
@@ -181,7 +182,7 @@
         "name": "Marsh",
         "contest": "One Game A Month",
         "banner": "../images/game/banners/marsh.png",
-        "url": "https://legacy.upgradeyourskull.com/marsh",
+        "url": "https://legacy.upgradeyourskull.com/marsh.html",
         "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>",
         "platforms": [
             {
@@ -203,7 +204,7 @@
         "contest": "One Game A Month",
         "banner": "../images/game/banners/avoidthegloom.png",
         "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>",
-        "url" : "https://legacy.upgradeyourskull.com/avoidthegloom",
+        "url" : "https://legacy.upgradeyourskull.com/avoidthegloom.html",
         "platforms": [
             {
                 "name": "kongregate",
@@ -223,7 +224,7 @@
         "name": "Colorpath",
         "contest": "One Game A Month",
         "banner": "../images/game/banners/colorpath.png",
-        "url": "https://legacy.upgradeyourskull.com/colorpath",
+        "url": "https://legacy.upgradeyourskull.com/colorpath.html",
         "description": "Music by <a href=\"https://twitter.com/BobbyDrano\" target=\"_blank\">@BobbyDrano</a>",
         "platforms": [
             {
@@ -243,7 +244,7 @@
     {
         "name": "The Column",
         "banner": "../images/game/banners/thecolumn.png",
-        "url": "https://legacy.upgradeyourskull.com/thecolumn",
+        "url": "https://legacy.upgradeyourskull.com/thecolumn.html",
         "description": "Music by xpeasmanx",
         "platforms": [
             {
