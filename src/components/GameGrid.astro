@@ -1,0 +1,35 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import GameCard from './GameCard.astro';
+import type { Game } from '../types';
+
+interface Props {
+  games: Game[];
+}
+
+const { games } = Astro.props;
+
+const bannerImports = import.meta.glob<{ default: ImageMetadata }>(
+  '../images/banners/*',
+  { eager: true }
+);
+
+const banners: Record<string, ImageMetadata> = {};
+for (const [path, mod] of Object.entries(bannerImports)) {
+  const filename = path.split('/').pop()!;
+  banners[filename] = mod.default;
+}
+
+function getBannerImage(bannerPath?: string): ImageMetadata | undefined {
+  if (!bannerPath) return undefined;
+  const filename = bannerPath.split('/').pop() ?? '';
+  return banners[filename];
+}
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  {games.map(game => (
+    <GameCard game={game} bannerImage={getBannerImage(game.banner)} />
+  ))}
+</div>

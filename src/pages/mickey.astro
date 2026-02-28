@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+const mickeyImports = import.meta.glob<{ default: ImageMetadata }>(
+  '../images/goodies/mickey/*',
+  { eager: true }
+);
+
+const mickeyImages = Object.entries(mickeyImports)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([, mod]) => mod.default);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mickey — Upgrade Your Skull</title>
+    <style>
+      body { background: #0f0f0f; margin: 0; }
+      .container { max-width: 900px; margin: 0 auto; padding: 1rem; }
+      ul { list-style: none; margin: 0; padding: 0; overflow: hidden; }
+      li { float: left; margin: 0.2rem; border: 0.3rem solid #aaa; border-radius: 0.3rem; }
+      img { display: block; }
+      footer { color: #666; font-size: 0.85rem; margin-top: 1rem; clear: both; padding: 0.5rem 0; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul>
+        {mickeyImages.map((img, i) => (
+          <li>
+            <Image src={img} alt={`Mickey ${i + 1}`} width={256} />
+          </li>
+        ))}
+      </ul>
+      <footer>2010 – 2026 Floriaen</footer>
+    </div>
+  </body>
+</html>

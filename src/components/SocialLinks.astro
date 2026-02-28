@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  size?: 'sm' | 'lg';
+}
+const { size = 'lg' } = Astro.props;
+const dim = size === 'lg' ? 48 : 24;
+
+const iconImports = import.meta.glob<{ default: ImageMetadata }>(
+  '../images/platform/*',
+  { eager: true }
+);
+
+const icons: Record<string, ImageMetadata> = {};
+for (const [path, mod] of Object.entries(iconImports)) {
+  const filename = path.split('/').pop()!;
+  icons[filename] = mod.default;
+}
+
+const links = [
+  { name: 'Kongregate', url: 'https://www.kongregate.com/games/Floriaen', icon: 'kongregate.png' },
+  { name: 'Newgrounds', url: 'https://floriaen.newgrounds.com/games', icon: 'newgrounds.png' },
+  { name: 'GameJolt', url: 'https://gamejolt.com/@Floriaen/games', icon: 'gamejolt.png' },
+  { name: 'GitHub', url: 'https://github.com/Floriaen', icon: 'github.png' },
+  { name: 'Bitbucket', url: 'https://bitbucket.org/Floriaen', icon: 'bitbucket.png' },
+  { name: 'X', url: 'https://x.com/floriaen', icon: 'x.png' },
+  { name: 'Instagram', url: 'https://www.instagram.com/floriaen/', icon: 'instagram.png' },
+];
+---
+
+<ul class="flex flex-wrap gap-3 list-none m-0 p-0">
+  {links.map(link => {
+    const img = icons[link.icon];
+    return img ? (
+      <li>
+        <a href={link.url} target="_blank" rel="noreferrer" title={link.name}
+          class="block opacity-70 hover:opacity-100 transition-opacity">
+          <Image src={img} alt={link.name} width={dim} height={dim}
+            class="block" style={`width:${dim}px;height:${dim}px;object-fit:contain`} />
+        </a>
+      </li>
+    ) : null;
+  })}
+</ul>

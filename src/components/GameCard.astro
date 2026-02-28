@@ -1,0 +1,103 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import PlatformBadge from './PlatformBadge.astro';
+import type { Game } from '../types';
+
+interface Props {
+  game: Game;
+  bannerImage?: ImageMetadata;
+}
+
+const { game, bannerImage } = Astro.props;
+const platforms = game.platforms || [];
+const sources = game.sources || [];
+const comments = game.comments || [];
+const hasLinks = platforms.length > 0 || sources.length > 0;
+---
+
+<div class="flex flex-col rounded-lg overflow-hidden"
+  style="background:var(--color-bg-surface);box-shadow:var(--shadow-card);transition:box-shadow 0.2s"
+  onmouseenter="this.style.boxShadow='var(--shadow-card-hover)'"
+  onmouseleave="this.style.boxShadow='var(--shadow-card)'"
+>
+  <!-- Banner -->
+  {bannerImage && game.url ? (
+    <a href={game.url} target={game.targetUrl === 'blank' ? '_blank' : undefined} rel="noreferrer">
+      <Image
+        src={bannerImage}
+        alt={game.name}
+        width={600}
+        height={338}
+        format="webp"
+        quality={85}
+        class="w-full object-cover block"
+        style="aspect-ratio:16/9"
+      />
+    </a>
+  ) : bannerImage ? (
+    <Image
+      src={bannerImage}
+      alt={game.name}
+      width={600}
+      height={338}
+      format="webp"
+      quality={85}
+      class="w-full object-cover block"
+      style="aspect-ratio:16/9"
+    />
+  ) : (
+    <div class="w-full flex items-center justify-center text-[var(--color-text-muted)] text-sm"
+      style="aspect-ratio:16/9;background:var(--color-border)">
+      {game.name}
+    </div>
+  )}
+
+  <!-- Card body -->
+  <div class="flex flex-col flex-1 p-4 gap-2">
+    <div class="flex items-start justify-between gap-2">
+      <h3 class="text-base font-semibold m-0 text-[var(--color-text-primary)]">
+        {game.url ? (
+          <a href={game.url} target={game.targetUrl === 'blank' ? '_blank' : undefined}
+            rel="noreferrer" class="hover:text-[var(--color-accent)] transition-colors"
+            style="color:inherit;text-decoration:none">
+            {game.name}
+          </a>
+        ) : (
+          game.name
+        )}
+      </h3>
+      {game.contest && (
+        <span class="text-xs px-2 py-0.5 rounded shrink-0"
+          style="background:var(--color-border);color:var(--color-text-muted);white-space:nowrap">
+          {game.contest}
+        </span>
+      )}
+    </div>
+
+    {game.description && (
+      <p class="text-sm m-0" style="color:var(--color-text-secondary)"
+        set:html={game.description} />
+    )}
+
+    {comments.length > 0 && (
+      <blockquote class="text-xs italic m-0 pl-3 border-l-2"
+        style="border-color:var(--color-accent);color:var(--color-text-muted)">
+        <p class="m-0">&ldquo;{comments[0].comment}&rdquo;</p>
+        <cite class="not-italic">
+          <a href={comments[0].url} target="_blank" rel="noreferrer"
+            class="hover:underline" style="color:var(--color-accent)">
+            — {comments[0].source}
+          </a>
+        </cite>
+      </blockquote>
+    )}
+
+    {hasLinks && (
+      <div class="flex flex-wrap gap-2 mt-auto pt-2">
+        {platforms.map(p => <PlatformBadge name={p.name} url={p.url} />)}
+        {sources.map(s => <PlatformBadge name={s.name} url={s.url} />)}
+      </div>
+    )}
+  </div>
+</div>

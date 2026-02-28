@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import GameGrid from '../components/GameGrid.astro';
+import DevSection from '../components/DevSection.astro';
+import GoodiesSection from '../components/GoodiesSection.astro';
+import AboutSection from '../components/AboutSection.astro';
+import games from '../data/games.json';
+import type { Game } from '../types';
+
+const typedGames = games as Game[];
+---
+
+<BaseLayout title="Upgrade Your Skull — Indie Games by Floriaen">
+  <Header />
+
+  <main class="max-w-6xl mx-auto px-4 py-12" style="display:flex;flex-direction:column;gap:5rem">
+
+    <section id="games">
+      <SectionHeading title="Games" id="games" />
+      <blockquote class="mb-8 pl-4 italic text-sm"
+        style="border-left:2px solid var(--color-border);color:var(--color-text-muted);margin-left:0">
+        <p class="m-0">&ldquo;Wortest game in the World. No, in All Galaxy. Now tell me cheat, this game impossible complete without death.&rdquo;</p>
+      </blockquote>
+      <GameGrid games={typedGames} />
+    </section>
+
+    <section id="development">
+      <SectionHeading title="Development" id="development" />
+      <DevSection />
+    </section>
+
+    <section id="goodies">
+      <SectionHeading title="Goodies" id="goodies" />
+      <GoodiesSection />
+    </section>
+
+    <section id="about">
+      <SectionHeading title="About" id="about" />
+      <AboutSection />
+    </section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>

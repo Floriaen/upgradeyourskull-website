@@ -4,31 +4,19 @@
   "private": true,
   "description": "upgradeyourskull",
   "author": "Florian",
-  "keywords": [
-    "gatsby"
-  ],
+  "type": "module",
   "scripts": {
-    "develop": "npx gatsby develop",
-    "start": "npx gatsby develop",
-    "build": "npx gatsby build",
-    "serve": "npx gatsby serve",
-    "clean": "npx gatsby clean"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "gatsby": "^5.12.12",
-    "gatsby-plugin-google-analytics": "^5.12.0",
-    "gatsby-plugin-ruffle": "git+https://github.com/Floriaen/gatsby-plugin-ruffle.git",
-    "gatsby-plugin-google-fonts": "^1.0.1",
-    "gatsby-plugin-image": "^3.12.3",
-    "gatsby-plugin-manifest": "^5.12.3",
-    "gatsby-plugin-sass": "^6.12.3",
-    "gatsby-plugin-sharp": "^5.12.3",
-    "gatsby-plugin-sitemap": "^6.12.3",
-    "gatsby-source-filesystem": "^5.12.1",
-    "gatsby-transformer-json": "^5.12.0",
-    "gatsby-transformer-sharp": "^5.12.3",
-    "node-sass": "^9.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "astro": "^5.0.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "tailwindcss": "^4.0.0",
+    "@fontsource/inter": "^5.0.0",
+    "sharp": "^0.33.0"
   }
 }
