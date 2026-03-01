@@ -1,0 +1,193 @@
+---
+const items = [
+  { label: 'js1k 2012',        href: '/brokenheart',                              external: false },
+  { label: 'js1k 2013',        href: 'https://js1k.com/2013-spring/demo/1379',    external: true  },
+  { label: 'PixelButton',      href: '/pixelbutton',                              external: false },
+  { label: 'Xcode Theme',      href: '/xcode4',                                   external: false },
+  { label: 'Wait...',          href: '/wait',                                     external: false },
+  { label: 'We are Anonymous', href: '/weareanonymous',                           external: false },
+  { label: 'Chagevara',        href: '/chagevara',                                external: false },
+];
+---
+
+<div id="eg-wrap" style="width:100%;height:360px;touch-action:none;user-select:none">
+  <svg id="eg-svg" style="width:100%;height:100%;overflow:visible">
+    <g id="eg-edges"></g>
+    <g id="eg-hub"></g>
+    <g id="eg-nodes"></g>
+  </svg>
+</div>
+
+<style>
+  #eg-nodes g         { cursor: grab; }
+  #eg-nodes g.drag    { cursor: grabbing; }
+  #eg-nodes g circle  { transition: fill 0.15s; }
+  #eg-nodes g text    { transition: fill 0.15s; pointer-events: none; }
+  #eg-nodes g:hover circle { fill: var(--color-text-primary); }
+  #eg-nodes g:hover text   { fill: var(--color-text-primary); }
+</style>
+
+<script define:vars={{ items }}>
+  const svg    = document.getElementById('eg-svg');
+  const edgesG = document.getElementById('eg-edges');
+  const hubG   = document.getElementById('eg-hub');
+  const nodesG = document.getElementById('eg-nodes');
+
+  function cv(n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+  function mkSVG(tag, attrs) {
+    const e = document.createElementNS('http://www.w3.org/2000/svg', tag);
+    for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
+    return e;
+  }
+
+  let nodes = [], raf = null;
+  let dragging = null, dragMoved = false, dragOrigin = null;
+  const t0 = Date.now();
+
+  // ── Init ──────────────────────────────────────────────────────────────────
+  function init() {
+    const { W, H, cx, cy } = bounds();
+    const r0 = Math.min(W, H) * 0.33;
+    const n  = items.length;
+
+    nodes = items.map((item, i) => {
+      const angle = -Math.PI / 2 + (2 * Math.PI * i) / n;
+      return { ...item, angle, x: cx + r0 * Math.cos(angle), y: cy + r0 * Math.sin(angle), vx: 0, vy: 0 };
+    });
+
+    edgesG.innerHTML = '';
+    nodes.forEach((_, i) => edgesG.appendChild(mkSVG('line', {
+      id: `eg-e${i}`, stroke: cv('--color-border'), 'stroke-width': '1', 'stroke-dasharray': '4 6',
+    })));
+
+    hubG.innerHTML = '';
+    hubG.appendChild(mkSVG('circle', { id: 'eg-hub-c', r: '4', fill: cv('--color-text-muted') }));
+
+    nodesG.innerHTML = '';
+    nodes.forEach((node, i) => {
+      const g = mkSVG('g', { id: `eg-n${i}` });
+      g.appendChild(mkSVG('circle', { r: '7', fill: cv('--color-accent') }));
+      const t = mkSVG('text', {
+        'font-size': '13', 'font-family': 'Inter, system-ui, sans-serif',
+        fill: cv('--color-text-secondary'),
+      });
+      t.textContent = node.label;
+      g.appendChild(t);
+
+      g.addEventListener('pointerdown', e => {
+        e.preventDefault();
+        dragging = i; dragMoved = false;
+        dragOrigin = { px: e.clientX, py: e.clientY, nx: node.x, ny: node.y };
+        g.classList.add('drag');
+        g.setPointerCapture(e.pointerId);
+      });
+      g.addEventListener('pointermove', e => {
+        if (dragging !== i) return;
+        const dx = e.clientX - dragOrigin.px, dy = e.clientY - dragOrigin.py;
+        if (Math.abs(dx) + Math.abs(dy) > 4) dragMoved = true;
+        nodes[i].x = dragOrigin.nx + dx;
+        nodes[i].y = dragOrigin.ny + dy;
+        nodes[i].vx = nodes[i].vy = 0;
+      });
+      g.addEventListener('pointerup', () => {
+        g.classList.remove('drag');
+        if (!dragMoved && dragging === i) window.open(node.href, node.external ? '_blank' : '_self');
+        dragging = null;
+      });
+
+      nodesG.appendChild(g);
+    });
+
+    if (!raf) raf = requestAnimationFrame(tick);
+  }
+
+  // ── Tick ──────────────────────────────────────────────────────────────────
+  function tick() {
+    const t  = (Date.now() - t0) * 0.001;
+    const { W, H, cx, cy } = bounds();
+
+    // Hub wanders with superimposed sines — Lissajous-ish drift
+    const hx = cx + W * 0.13 * Math.sin(0.55 * t)       * Math.cos(0.22 * t + 0.4);
+    const hy = cy + H * 0.17 * Math.sin(0.40 * t + 1.1) * Math.cos(0.31 * t + 0.9);
+
+    // Radius pulses like a bell
+    const baseR  = Math.min(W, H) * 0.30;
+    const pulseR = baseR * (1 + 0.09 * Math.sin(t * 1.6));
+
+    const SPRING = 0.055;
+    const DAMP   = 0.72;
+    const REPULSE = 1800;
+
+    nodes.forEach((n, i) => {
+      if (i === dragging) return;
+
+      // Slowly rotate the formation
+      const angle = n.angle + t * 0.04;
+      // Each node also has an individual gentle wobble
+      const r = pulseR + 18 * Math.sin(t * 2.1 + i * (Math.PI * 2 / nodes.length) + 0.6);
+      const tx = hx + r * Math.cos(angle);
+      const ty = hy + r * Math.sin(angle);
+
+      // Spring toward jellyfish target
+      n.vx += (tx - n.x) * SPRING;
+      n.vy += (ty - n.y) * SPRING;
+
+      // Light repulsion so tentacles don't tangle
+      nodes.forEach((o, j) => {
+        if (j === i) return;
+        const dx = n.x - o.x, dy = n.y - o.y;
+        const d = Math.sqrt(dx * dx + dy * dy) || 1;
+        if (d < 60) {
+          const f = (REPULSE / (d * d)) * 0.01;
+          n.vx += (dx / d) * f;
+          n.vy += (dy / d) * f;
+        }
+      });
+
+      n.vx *= DAMP; n.vy *= DAMP;
+      n.x  += n.vx; n.y  += n.vy;
+    });
+
+    updateDOM(hx, hy);
+    raf = requestAnimationFrame(tick);
+  }
+
+  // ── DOM ───────────────────────────────────────────────────────────────────
+  function updateDOM(hx, hy) {
+    const hubC = document.getElementById('eg-hub-c');
+    if (hubC) { hubC.setAttribute('cx', hx); hubC.setAttribute('cy', hy); }
+
+    nodes.forEach((n, i) => {
+      const line = document.getElementById(`eg-e${i}`);
+      if (line) { line.setAttribute('x1', hx); line.setAttribute('y1', hy);
+                  line.setAttribute('x2', n.x); line.setAttribute('y2', n.y); }
+
+      const g = document.getElementById(`eg-n${i}`);
+      if (!g) return;
+      g.querySelector('circle').setAttribute('cx', n.x);
+      g.querySelector('circle').setAttribute('cy', n.y);
+
+      // Label pushed away from hub
+      const dx = n.x - hx, dy = n.y - hy;
+      const text = g.querySelector('text');
+      if (Math.abs(dx) >= Math.abs(dy)) {
+        text.setAttribute('text-anchor', dx >= 0 ? 'start' : 'end');
+        text.setAttribute('x', n.x + (dx >= 0 ? 13 : -13));
+        text.setAttribute('y', n.y + 5);
+      } else {
+        text.setAttribute('text-anchor', 'middle');
+        text.setAttribute('x', n.x);
+        text.setAttribute('y', n.y + (dy >= 0 ? 22 : -16));
+      }
+    });
+  }
+
+  function bounds() {
+    const r = svg.getBoundingClientRect();
+    const W = r.width || 600, H = r.height || 360;
+    return { W, H, cx: W / 2, cy: H / 2 };
+  }
+
+  new ResizeObserver(init).observe(svg);
+  init();
+</script>

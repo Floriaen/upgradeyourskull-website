@@ -4,8 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import GameGrid from '../components/GameGrid.astro';
-import DevSection from '../components/DevSection.astro';
-import GoodiesSection from '../components/GoodiesSection.astro';
+import ExtrasGraph from '../components/ExtrasGraph.astro';
 import games from '../data/games.json';
 import type { Game } from '../types';
 
@@ -27,14 +26,9 @@ const typedGames = games as Game[];
       <GameGrid games={typedGames} />
     </section>
 
-    <section id="development">
-      <SectionHeading title="Development" id="development" />
-      <DevSection />
-    </section>
-
-    <section id="goodies">
-      <SectionHeading title="Goodies" id="goodies" />
-      <GoodiesSection />
+    <section id="extras">
+      <SectionHeading title="Extras" id="extras" />
+      <ExtrasGraph />
     </section>
 
   </main>
