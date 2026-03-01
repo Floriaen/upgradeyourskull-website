@@ -1,46 +1,31 @@
 ---
-import { Image } from 'astro:assets';
-import type { ImageMetadata } from 'astro';
-
 interface Props {
-  size?: 'sm' | 'lg';
+  size?: 'sm' | 'md' | 'lg';
 }
 const { size = 'lg' } = Astro.props;
-const dim = size === 'lg' ? 48 : 24;
-
-const iconImports = import.meta.glob<{ default: ImageMetadata }>(
-  '../images/platform/*',
-  { eager: true }
-);
-
-const icons: Record<string, ImageMetadata> = {};
-for (const [path, mod] of Object.entries(iconImports)) {
-  const filename = path.split('/').pop()!;
-  icons[filename] = mod.default;
-}
+const dim = size === 'lg' ? 48 : size === 'md' ? 32 : 24;
 
 const links = [
-  { name: 'Kongregate', url: 'https://www.kongregate.com/games/Floriaen', icon: 'kongregate.png' },
-  { name: 'Newgrounds', url: 'https://floriaen.newgrounds.com/games', icon: 'newgrounds.png' },
-  { name: 'GameJolt', url: 'https://gamejolt.com/@Floriaen/games', icon: 'gamejolt.png' },
-  { name: 'GitHub', url: 'https://github.com/Floriaen', icon: 'github.png' },
-  { name: 'Bitbucket', url: 'https://bitbucket.org/Floriaen', icon: 'bitbucket.png' },
-  { name: 'X', url: 'https://x.com/floriaen', icon: 'x.png' },
-  { name: 'Instagram', url: 'https://www.instagram.com/floriaen/', icon: 'instagram.png' },
+  { name: 'Kongregate', url: 'https://www.kongregate.com/games/Floriaen', icon: 'kongregate' },
+  { name: 'Newgrounds', url: 'https://floriaen.newgrounds.com/games', icon: 'newgrounds' },
+  { name: 'GameJolt', url: 'https://gamejolt.com/@Floriaen/games', icon: 'gamejolt' },
+  { name: 'GitHub', url: 'https://github.com/Floriaen', icon: 'github' },
+  { name: 'Bitbucket', url: 'https://bitbucket.org/Floriaen', icon: 'bitbucket' },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/company/upgradeyourskull', icon: 'linkedin' },
+  { name: 'X', url: 'https://x.com/floriaen', icon: 'x' },
+  { name: 'Instagram', url: 'https://www.instagram.com/floriaen/', icon: 'instagram' },
 ];
 ---
 
 <ul class="flex flex-wrap gap-3 list-none m-0 p-0">
-  {links.map(link => {
-    const img = icons[link.icon];
-    return img ? (
-      <li>
-        <a href={link.url} target="_blank" rel="noreferrer" title={link.name}
-          class="block opacity-70 hover:opacity-100 transition-opacity">
-          <Image src={img} alt={link.name} width={dim} height={dim}
-            class="block" style={`width:${dim}px;height:${dim}px;object-fit:contain`} />
-        </a>
-      </li>
-    ) : null;
-  })}
+  {links.map(link => (
+    <li>
+      <a href={link.url} target="_blank" rel="noreferrer" title={link.name}
+        class="block opacity-70 hover:opacity-100 transition-opacity">
+        <img src={`/icons/${link.icon}.svg`} alt={link.name}
+          width={dim} height={dim}
+          style={`width:${dim}px;height:${dim}px;object-fit:contain`} />
+      </a>
+    </li>
+  ))}
 </ul>
