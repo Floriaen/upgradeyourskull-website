@@ -13,7 +13,7 @@ import type { Game } from '../types';
 const typedGames = games as Game[];
 ---
 
-<BaseLayout title="Upgrade Your Skull — Indie Games by Floriaen">
+<BaseLayout title="Upgrade Your Skull">
   <Header />
 
   <main class="max-w-6xl mx-auto px-4 py-12" style="display:flex;flex-direction:column;gap:5rem">
@@ -23,6 +23,7 @@ const typedGames = games as Game[];
       <blockquote class="mb-8 pl-4 italic text-sm"
         style="border-left:2px solid var(--color-border);color:var(--color-text-muted);margin-left:0">
         <p class="m-0">&ldquo;Wortest game in the World. No, in All Galaxy. Now tell me cheat, this game impossible complete without death.&rdquo;</p>
+        <p class="m-0">&ldquo;If you can't jump, what's the point?&rdquo;</p>
       </blockquote>
       <GameGrid games={typedGames} />
     </section>
