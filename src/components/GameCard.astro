@@ -51,25 +51,17 @@ const hasLinks = platforms.length > 0 || sources.length > 0;
 
   <!-- Card body -->
   <div class="flex flex-col flex-1 p-4 gap-2">
-    <div class="flex items-start justify-between gap-2">
-      <h3 class="text-base font-semibold m-0 text-[var(--color-text-primary)]">
-        {game.url ? (
-          <a href={game.url} target={game.targetUrl === 'blank' ? '_blank' : undefined}
-            rel="noreferrer" class="hover:text-[var(--color-accent)] transition-colors"
-            style="color:inherit;text-decoration:none">
-            {game.name}
-          </a>
-        ) : (
-          game.name
-        )}
-      </h3>
-      {game.contest && (
-        <span class="text-xs px-2 py-0.5 rounded shrink-0"
-          style="background:var(--color-border);color:var(--color-text-muted);white-space:nowrap">
-          {game.contest}
-        </span>
+    <h3 class="text-base font-semibold m-0 text-[var(--color-text-primary)]">
+      {game.url ? (
+        <a href={game.url} target={game.targetUrl === 'blank' ? '_blank' : undefined}
+          rel="noreferrer" class="hover:text-[var(--color-accent)] transition-colors"
+          style="color:inherit;text-decoration:none">
+          {game.name}
+        </a>
+      ) : (
+        game.name
       )}
-    </div>
+    </h3>
 
     {game.description && (
       <p class="text-sm m-0" style="color:var(--color-text-secondary)"
@@ -89,10 +81,16 @@ const hasLinks = platforms.length > 0 || sources.length > 0;
       </blockquote>
     )}
 
-    {hasLinks && (
-      <div class="flex flex-wrap gap-2 mt-auto pt-2">
+    {(hasLinks || game.contest) && (
+      <div class="flex flex-wrap items-center gap-2 mt-auto pt-2">
         {platforms.map(p => <PlatformBadge name={p.name} url={p.url} />)}
         {sources.map(s => <PlatformBadge name={s.name} url={s.url} />)}
+        {game.contest && (
+          <span class="text-xs px-2 py-0.5 rounded"
+            style="background:var(--color-border);color:var(--color-text-muted);white-space:nowrap">
+            {game.contest}
+          </span>
+        )}
       </div>
     )}
   </div>
