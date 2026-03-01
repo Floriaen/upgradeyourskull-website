@@ -13,8 +13,8 @@
         "comment": "",
         "sources": [
             {
-                "name": "bitbucket",
-                "url": "https://bitbucket.org/Floriaen/amazer"
+                "name": "github",
+                "url": "https://github.com/Floriaen/amazer"
             }
         ]
     },
@@ -22,10 +22,11 @@
         "name": "Downfall",
         "banner": "../images/game/banners/downfall.png",
         "description": "Music by Felix",
+        "url": "/downfall",
         "sources": [
             {
-                "name": "bitbucket",
-                "url": "https://bitbucket.org/Floriaen/downfall"
+                "name": "github",
+                "url": "https://github.com/Floriaen/downfall"
             }
         ]
     },
@@ -55,6 +56,7 @@
         "banner": "../images/game/banners/r.jpg",
         "oldUrl": "http://ludumdare.com/compo/ludum-dare-31/?action=preview&uid=4562",
         "targetUrl": "blank",
+        "url":"/r",
         "description": "Created during ld31 contest"
     },
     {
@@ -277,18 +279,12 @@
         "name": "Snake",
         "banner": "../images/game/banners/snake.png",
         "contest": "",
-        "url": "snake"
+        "url": "/snake"
     },
     {
         "name": "The Fall",
         "banner": "../images/game/banners/thefall.jpg",
         "description": "Created during ld48 contest",
-        "url": "/thefall/ld48/",
-        "platforms": [
-            {
-                "name": "floriaen",
-                "url": "/thefall/ld48/"
-            }
-        ]
+        "url": "/thefall/ld48/"
     }
 ]
