@@ -6,7 +6,6 @@ import SectionHeading from '../components/SectionHeading.astro';
 import GameGrid from '../components/GameGrid.astro';
 import DevSection from '../components/DevSection.astro';
 import GoodiesSection from '../components/GoodiesSection.astro';
-import AboutSection from '../components/AboutSection.astro';
 import games from '../data/games.json';
 import type { Game } from '../types';
 
@@ -36,11 +35,6 @@ const typedGames = games as Game[];
     <section id="goodies">
       <SectionHeading title="Goodies" id="goodies" />
       <GoodiesSection />
-    </section>
-
-    <section id="about">
-      <SectionHeading title="About" id="about" />
-      <AboutSection />
     </section>
 
   </main>
