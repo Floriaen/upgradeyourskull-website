@@ -175,8 +175,8 @@
         ],
         "sources": [
             {
-                "name": "bitbucket",
-                "url": "https://bitbucket.org/Floriaen/pests"
+                "name": "github",
+                "url": "https://github.com/Floriaen/pests"
             }
         ]
     },
