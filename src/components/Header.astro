@@ -5,9 +5,11 @@ import SocialLinks from './SocialLinks.astro';
 <header class="border-b border-[var(--color-border)]">
   <div class="max-w-6xl mx-auto px-4 py-8">
     <div class="flex flex-col gap-4">
-      <h1 class="text-2xl sm:text-4xl font-bold tracking-tight m-0 text-[var(--color-text-primary)] flex items-center gap-3">
-        <img src="/happy-face.png" alt="" width={48} height={48} style="width:2em;height:2em;object-fit:contain" />
-        UPGRADEYOURSKULL
+      <h1 class="text-2xl sm:text-4xl font-bold tracking-tight m-0">
+        <a href="/" class="text-[var(--color-text-primary)] no-underline flex items-center gap-3">
+          <img src="/happy-face.png" alt="" width={48} height={48} style="width:2em;height:2em;object-fit:contain" />
+          UPGRADEYOURSKULL
+        </a>
       </h1>
       <SocialLinks size="md" />
     </div>

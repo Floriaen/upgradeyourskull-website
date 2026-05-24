@@ -1,0 +1,113 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../../images/digger/logo.png';
+import screenshot from '../../images/digger/screenshot.png';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creuseur</title>
+    <link rel="icon" href="/happy-face.png" />
+    <style>
+      @font-face {
+        font-family: '8-bit Arcade Out';
+        src: url('/fonts/8-bit-arcade-out.ttf') format('truetype');
+        font-display: swap;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: #202020;
+        color: #ffffff;
+        min-height: 100vh;
+        font-family: '8-bit Arcade Out', system-ui, sans-serif;
+      }
+
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        text-align: center;
+      }
+
+      h1 {
+        font-family: '8-bit Arcade Out', system-ui, sans-serif;
+        font-weight: normal;
+        font-size: clamp(5rem, 20vw, 12rem);
+        margin: 0;
+        letter-spacing: 0.05em;
+        line-height: 0.36;
+      }
+
+      .logo {
+        max-width: 280px;
+        width: 60%;
+        height: auto;
+      }
+
+      .credit {
+        margin: 0;
+        font-family: system-ui, sans-serif;
+        font-size: 1.5rem;
+        color: #bbb;
+      }
+
+      .store {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-top: 2rem;
+        font-family: system-ui, sans-serif;
+        font-size: 1.5rem;
+        color: #ddd;
+        text-decoration: none;
+        opacity: 0.85;
+        transition: opacity 0.2s ease;
+      }
+
+      .store:hover {
+        opacity: 1;
+      }
+
+      .store img {
+        width: 44px;
+        height: 44px;
+      }
+
+      .screenshot {
+        width: 75%;
+        height: auto;
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+      }
+
+      footer {
+        margin-top: 2rem;
+        font-size: 0.9rem;
+        color: #888;
+        font-family: system-ui, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>CREU<br />SEUR</h1>
+      <a href="#" class="store" aria-label="Soon available on Google Play">
+        <span>Soon available on</span>
+        <img src="/icons/google-play.svg" alt="Google Play" width="44" height="44" loading="lazy" decoding="async" />
+      </a>
+      <Image src={screenshot} alt="Creuseur screenshot" class="screenshot" loading="lazy" decoding="async" />
+      <p class="credit">Music by EYEMC</p>
+      <Image src={logo} alt="Upgrade Your Skull" class="logo" loading="lazy" decoding="async" />
+      <footer>© 2026 Upgrade Your Skull</footer>
+    </main>
+  </body>
+</html>
